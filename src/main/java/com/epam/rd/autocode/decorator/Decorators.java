@@ -8,7 +8,9 @@ import java.util.stream.Collectors;
 
 public class Decorators {
     public static List<String> evenIndexElementsSubList(List<String> sourceList) {
-        return sourceList.stream().filter(s -> sourceList.indexOf(s) % 2 == 0).collect(Collectors.toList());
+      //  return sourceList.stream().filter(s -> sourceList.indexOf(s) % 2 == 0).collect(Collectors.toList());
+        return new EvenDecorator(sourceList);
+
 //
 //                return new AbstractList<>(){
 //                    private List<String> list = new ArrayList<>();
